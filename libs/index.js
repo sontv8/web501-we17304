@@ -1,25 +1,6 @@
-// const Animal = { //object literal
-//     name: 'yasuo',
-//     run: function(){
-//         console.log('Dang chem');
-//     }
-// }
+import Navigo from "navigo";
 
-// function Animal(){ //object constructor
-//     this.name = 'yasuo';
-//     this.run = function(){
-//         console.log('Dang chem');
-//     }
-//     const a = 10;
-// }
+// khởi tạo 1 object từ Navigo
+const router = new Navigo('/');
 
-class Animal{
-    name = 'abc';
-    run = () =>{
-        console.log('abcd');
-    }
-}
-
-const cat = new Animal();
-
-console.log(cat.run());
+export {router};
