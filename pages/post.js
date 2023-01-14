@@ -1,5 +1,10 @@
+import Header from "../components/Header";
+
 const PostPage = ()=>{
-    return `<h1>Post Page</h1>`;
+    return `
+        ${Header()}
+        <h1>Post Page</h1>
+    `;
 }
 
 export default PostPage;
