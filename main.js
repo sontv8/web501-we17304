@@ -3,6 +3,7 @@ import ContactPage from "./pages/contact";
 import { router } from "./libs";
 import AboutPage from "./pages/about";
 import PostPage from "./pages/post";
+import ProjectPage from "./pages/projects";
 
 const app = document.querySelector('#app');
 
@@ -22,6 +23,9 @@ router.on('/about', ()=>{
 })
 router.on('/post', ()=>{
   render(app,PostPage)
+})
+router.on('/projects',()=>{
+  render(app,ProjectPage)
 })
 
 router.resolve();

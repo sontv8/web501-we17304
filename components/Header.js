@@ -6,6 +6,7 @@ const Header = () => {
                 <a href='/contact'>Contact</a>
                 <a href='/about'>About</a>
                 <a href='/post'>Post</a>
+                <a href='/projects'>Projects</a>
             </nav>
         </header>
     `
