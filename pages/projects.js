@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { projectList } from "../data/data";
+import { projectList } from "../data";
 
 const ProjectPage = ()=>{
     console.log(projectList.map(item => `<p>Project Id: ${item.id}</p>`).join(""));
