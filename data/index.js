@@ -12,4 +12,12 @@ const projectList = [
         name: "Dự án tốt nghiệp"
     },
 ];
-export { projectList };
+
+const menuList = [
+    {name:"Home",path:"/"},
+    {name:"About",path:"/about"},
+    {name:"Contact",path:"/contact"},
+    {name:"Post",path:"/post"},
+    {name:"Project",path:"/projects"}
+]
+export { projectList, menuList };

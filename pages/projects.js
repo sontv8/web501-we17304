@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import ProjectList from "../components/ProjectList";
 import { projectList } from "../data";
 
 const ProjectPage = ()=>{
@@ -6,17 +7,7 @@ const ProjectPage = ()=>{
     return `
         ${Header()}
         <h1>Project Page</h1>
-        ${
-            projectList.map((item)=>{
-                return `
-                    <div>
-                        <p>Project Id: ${item.id}</p>
-                        <h2>Project Name: ${item.name}</h2>
-                    </div>
-                `
-            }).join("")
-        }
+        ${ProjectList({ projects: projectList})}
     `;
 }
-
 export default ProjectPage;
