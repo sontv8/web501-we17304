@@ -7,7 +7,7 @@ const ProjectList = ({ projects }) => {
             return `
                 <div>
                     <p>Project Id: ${item.id}</p>
-                    <h2>Project Name: ${item.name}</h2>
+                    <h2><a href="/projects/${item.id}">Project Name: ${item.name}</a></h2>
                 </div>
             `
         }).join("")
