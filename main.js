@@ -1,6 +1,9 @@
 import { render, router } from "./libs";
 
 import AboutPage from "./pages/about";
+import AdminProjectAddPage from "./pages/admin/project-add";
+import AdminProjectUpdatePage from "./pages/admin/project-update";
+import AdminProjectPage from "./pages/admin/projects";
 import ContactPage from "./pages/contact";
 import HomePage from "./pages/home";
 import NotFoundPage from "./pages/not-found";
@@ -29,6 +32,18 @@ router.on("/projects/:id",(params)=>{
     // console.log(params);
     render(function(){
         return ProjectDetailPage(params)
+    },app)
+})
+
+router.on("/admin/projects",()=>{
+    render(AdminProjectPage,app)
+})
+router.on("/admin/projects/add",()=>{
+    render(AdminProjectAddPage,app)
+})
+router.on("/admin/projects/:id/update",(params)=>{
+    render(function(){
+        return AdminProjectUpdatePage(params)
     },app)
 })
 
