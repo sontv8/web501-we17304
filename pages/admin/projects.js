@@ -7,8 +7,11 @@ const AdminProjectPage = () => {
     // Hàm được gọi lại sau khi return ( render ) ra ngoài màn hình
     useEffect(()=>{
         // Lấy dữ liệu từ localStorage ra, nếu nó không có thì gán bằng []
-        const projects = JSON.parse(localStorage.getItem("projects"))||[];
-        setData(projects)
+        // const projects = JSON.parse(localStorage.getItem("projects"))||[];
+        // setData(projects)
+        fetch("http://localhost:3000/projects")
+          .then((response)=> response.json())
+          .then((data)=> setData(data))
     },[])
     // chạy sau khi render
     useEffect(function () {
@@ -21,8 +24,14 @@ const AdminProjectPage = () => {
                 const newData = data.filter((project) => {
                     return project.id != id;
                 })
+                // Xóa ở local
                 setData(newData); //set lại data ở client
                 // localStorage.setItem("projects",JSON.stringify(newData)); //set lại data ở localStorage
+
+                // Xóa ở server
+                fetch(`http://localhost:3000/projects/${id}`,{
+                  method:"DELETE"
+                })
             })
         }
     })
