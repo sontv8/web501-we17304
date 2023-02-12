@@ -4,7 +4,9 @@ const AdminProjectPage = () => {
     //   const[data,setData] = useState(projectList);
     const [data, setData] = useState([]);
 
+    // Hàm được gọi lại sau khi return ( render ) ra ngoài màn hình
     useEffect(()=>{
+        // Lấy dữ liệu từ localStorage ra, nếu nó không có thì gán bằng []
         const projects = JSON.parse(localStorage.getItem("projects"))||[];
         setData(projects)
     },[])
