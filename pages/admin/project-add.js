@@ -17,18 +17,29 @@ const AdminProjectAddPage = () => {
             e.preventDefault();
             // tạo ra 1 object mới lấy dữ liệu từ form
             const newProject = {
-                id: projectList.length + 1,
+                // id: projectList.length + 1,
                 name: projectName.value
             };
+            fetch("http://localhost:3000/projects",{
+                // GET, POST, PUT, DELETE...
+                method:"POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(newProject)
+            }).then(()=> router.navigate("/admin/projects"))
+
+
+
             // thêm vào mảng projectList
-            projectList.push(newProject);
+            // projectList.push(newProject);
 
             // lưu vào localStorage dưới dạng chuỗi
-            localStorage.setItem("projects",JSON.stringify(projectList));
+            // localStorage.setItem("projects",JSON.stringify(projectList));
 
             // console.log(localStorage.getItem("projects"));
             // điều hướng về trang projects
-            router.navigate("/admin/projects");
+            // router.navigate("/admin/projects");
         });
     });
     return `<div class="container">
