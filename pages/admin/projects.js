@@ -1,3 +1,4 @@
+import { deleteProject, getProjects } from "../../api/config";
 import { projectList } from "../../data"
 import { useEffect, useState } from "../../libs"
 const AdminProjectPage = () => {
@@ -9,9 +10,11 @@ const AdminProjectPage = () => {
         // Lấy dữ liệu từ localStorage ra, nếu nó không có thì gán bằng []
         // const projects = JSON.parse(localStorage.getItem("projects"))||[];
         // setData(projects)
-        fetch("http://localhost:3000/projects")
-          .then((response)=> response.json())
-          .then((data)=> setData(data))
+        // fetch("http://localhost:3000/projects")
+        //   .then((response)=> response.json())
+        //   .then((data)=> setData(data))
+
+        getProjects().then(({data})=> setData(data))
     },[])
     // chạy sau khi render
     useEffect(function () {
@@ -29,9 +32,11 @@ const AdminProjectPage = () => {
                 // localStorage.setItem("projects",JSON.stringify(newData)); //set lại data ở localStorage
 
                 // Xóa ở server
-                fetch(`http://localhost:3000/projects/${id}`,{
-                  method:"DELETE"
-                })
+                // fetch(`http://localhost:3000/projects/${id}`,{
+                //   method:"DELETE"
+                // })
+
+                deleteProject(id)
             })
         }
     })

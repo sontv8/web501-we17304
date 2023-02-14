@@ -1,4 +1,5 @@
 // import { projectList } from "../../data";
+import { getProject, updateProject } from "../../api/config";
 import { router, useEffect, useState } from "../../libs";
 
 const AdminProjectUpdatePage = ({data: {id}}) => {
@@ -16,9 +17,11 @@ const AdminProjectUpdatePage = ({data: {id}}) => {
     */ 
    const [data,setData] = useState([])
     useEffect(()=>{
-        fetch(`http://localhost:3000/projects/${id}`)
-            .then((response)=> response.json())
-            .then((data) => setData(data))
+        // fetch(`http://localhost:3000/projects/${id}`)
+        //     .then((response)=> response.json())
+        //     .then((data) => setData(data))
+
+        getProject(id).then(({data}) => setData(data))
     },[])
     useEffect(() => {
         const form = document.getElementById("form-add");
@@ -31,13 +34,15 @@ const AdminProjectUpdatePage = ({data: {id}}) => {
                 id: id,
                 name: projectName.value
             };
-            fetch(`http://localhost:3000/projects/${id}`,{
-                method:"PUT",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body: JSON.stringify(newProject)
-            }).then(()=> router.navigate("/admin/projects"))
+            // fetch(`http://localhost:3000/projects/${id}`,{
+            //     method:"PUT",
+            //     headers:{
+            //         "Content-Type":"application/json"
+            //     },
+            //     body: JSON.stringify(newProject)
+            // }).then(()=> router.navigate("/admin/projects"))
+
+            updateProject(newProject).then(()=> router.navigate("/admin/projects"))
 
 
             // cập nhật vào mảng projectList

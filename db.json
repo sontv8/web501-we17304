@@ -9,12 +9,14 @@
       "name": "Dự án 2 update"
     },
     {
-      "name": "Dự án mẫu",
-      "id": 3
-    },
+      "id": 3,
+      "name": "Dự án mẫu update"
+    }
+  ],
+  "post": [
     {
-      "name": "Dự án tốt nghiệp",
-      "id": 4
+      "id": 1,
+      "title": "hehe"
     }
   ]
 }
