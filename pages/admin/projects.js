@@ -1,5 +1,4 @@
-import { deleteProject, getProjects } from "../../api/config";
-import { projectList } from "../../data"
+import { deleteProject, getProjects } from "../../api/project";
 import { useEffect, useState } from "../../libs"
 const AdminProjectPage = () => {
     //   const[data,setData] = useState(projectList);

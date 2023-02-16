@@ -1,5 +1,5 @@
 // import { projectList } from "../../data";
-import { getProject, updateProject } from "../../api/config";
+import { getProject, updateProject } from "../../api/project";
 import { router, useEffect, useState } from "../../libs";
 
 const AdminProjectUpdatePage = ({data: {id}}) => {

@@ -1,4 +1,5 @@
 // import { projectList } from "../../data";
+import { addProject } from "../../api/project";
 import { router, useEffect } from "../../libs";
 
 const AdminProjectAddPage = () => {
@@ -20,15 +21,16 @@ const AdminProjectAddPage = () => {
                 // id: projectList.length + 1,
                 name: projectName.value
             };
-            fetch("http://localhost:3000/projects",{
-                // GET, POST, PUT, DELETE...
-                method:"POST",
-                headers:{
-                    'Content-Type':'application/json'
-                },
-                body: JSON.stringify(newProject)
-            }).then(()=> router.navigate("/admin/projects"))
+            // fetch("http://localhost:3000/projects",{
+            //     // GET, POST, PUT, DELETE...
+            //     method:"POST",
+            //     headers:{
+            //         'Content-Type':'application/json'
+            //     },
+            //     body: JSON.stringify(newProject)
+            // }).then(()=> router.navigate("/admin/projects"))
 
+            addProject(newProject).then(()=> router.navigate("/admin/projects"))
 
 
             // thêm vào mảng projectList
