@@ -1,0 +1,7 @@
+Lấy dữ liệu của bảng con sử dụng: _embed 
+ví dụ: http://localhost:3000/categories?_embed=projects
+hoặc : http://localhost:3000/categories/:id?_embed=projects
+
+Lấy dữ liệu bảng cha thông qua bảng con : _expand
+ví dụ: http://localhost:3000/projects?_expand=category
+ví dụ: http://localhost:3000/projects/:id?_expand=category

@@ -2,22 +2,30 @@
   "projects": [
     {
       "id": 1,
-      "name": "Dự án 1 update"
+      "name": "Dự án 1 update",
+      "categoryId": 1
     },
     {
       "id": 2,
-      "name": "Dự án 2 update"
+      "name": "Dự án 2 update",
+      "categoryId": 1
     },
     {
       "id": 3,
-      "name": "Dự án mẫu update"
+      "name": "Dự án mẫu update",
+      "categoryId": 1
     },
     {
       "name": "Du an 4",
-      "id": 4
+      "id": 4,
+      "categoryId": 2
     }
   ],
-  "post": [
+  "categories": [
+    { "id": 1, "name": "HTML"},
+    { "id": 2, "name": "Javascript"}
+  ],
+  "posts": [
     {
       "id": 1,
       "title": "hehe"
